@@ -1,6 +1,6 @@
 ```mermaid
 classDiagram
-direction TB
+direction TD
     class Personal {
 	    +String dni
 	    +String NSS
