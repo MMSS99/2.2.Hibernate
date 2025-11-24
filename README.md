@@ -34,7 +34,8 @@ direction TD
     }
 
     class Enfermeros {
-	    -int consulta
+        +int turno
+	    +int consulta
     }
 
     class Limpiador {
@@ -56,3 +57,13 @@ direction TD
     Limpiador --> Turnos
     Eventos "0" *-- "n" Medico
 ```
+
+Join_Table: 
+![img.png](asserts/img.png)
+
+
+Single_Table:
+![img_1.png](asserts/img_1.png)
+
+Table_Per_Class:
+![img_2.png](asserts/img_2.png)
