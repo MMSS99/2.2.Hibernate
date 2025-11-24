@@ -1,4 +1,4 @@
-package model;
+package dam.single_table;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,9 +1,9 @@
-package model;
+package dam.join_table;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "personal")
+@Entity(name = "PersonalJoinTable")
+@Table(name = "personalJoinTable")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name= "trabajo", discriminatorType= DiscriminatorType.STRING)
 public class Personal {
@@ -18,6 +18,5 @@ public class Personal {
     String telefono;
     @Column(name= "nombre", nullable=false, length=127)
     String nombre;
-    @Column(name= "trabajo", nullable=false, length=127)
-    String trabajo;
+
 }

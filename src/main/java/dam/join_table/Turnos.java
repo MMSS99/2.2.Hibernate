@@ -1,4 +1,4 @@
-package model;
+package dam.join_table;
 
 public enum Turnos {
     MANANA(1),

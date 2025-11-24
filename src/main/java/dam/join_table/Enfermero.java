@@ -1,13 +1,13 @@
-package model;
+package dam.join_table;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
+import dam.single_table.Personal;
 
 @Entity
-@PrimaryKeyJoinColumn(name="dni")
 @DiscriminatorValue(value="2")
-public class Enfermeros extends Personal{
-    String dni;
+public class Enfermero extends Personal {
+
     int consulta;
 }
