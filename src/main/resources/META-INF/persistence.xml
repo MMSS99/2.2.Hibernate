@@ -1,9 +1,48 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
-             version="3.2">
-    <persistence-unit name="default">
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
 
+    <!-- 1. SINGLE_TABLE -->
+    <persistence-unit name="hospital_single">
+        <class>dam.single_table.Evento</class>
+        <class>dam.single_table.Consulta</class>
+        <class>dam.single_table.Personal</class>
+        <class>dam.single_table.Medico</class>
+        <class>dam.single_table.Enfermero</class>
+
+        <!-- otras entidades -->
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hospital_single"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="root"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+
+    <!-- 2. JOINED -->
+    <persistence-unit name="hospital_joined">
+        <class>dam.join_table.Personal</class>
+        <class>dam.join_table.Medico</class>
+        <class>dam.join_table.Enfermero</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hospital_joined"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="root"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
+    </persistence-unit>
+
+    <!-- 3. TABLE_PER_CLASS -->
+    <persistence-unit name="hospital_table_per_class">
+        <class>dam.table_per_class.Personal</class>
+        <class>dam.table_per_class.Medico</class>
+        <class>dam.table_per_class.Enfermero</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hospital_table_per_class"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="root"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
     </persistence-unit>
 </persistence>
